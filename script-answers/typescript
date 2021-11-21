@@ -1,0 +1,7 @@
+Script started on Sun Nov 21 18:45:13 2021
+[1m[7m%[27m[1m[0m                                                                                                                                    [0m[27m[24m[Jnightsnail@Eemelis-MBP script-answers % [K[?2004h[7mdocker container run -it ubuntu bash[27m[36D[27md[27mo[27mc[27mk[27me[27mr[27m [27mc[27mo[27mn[27mt[27ma[27mi[27mn[27me[27mr[27m [27mr[27mu[27mn[27m [27m-[27mi[27mt[27m [27mu[27mb[27mu[27mn[27mt[27mu[27m [27mb[27ma[27ms[27mh[?2004l
+]0;root@e9306ae2e797: /root@e9306ae2e797:/# [K]0;root@e9306ae2e797: /root@e9306ae2e797:/# mkdir usr/src/app
+]0;root@e9306ae2e797: /root@e9306ae2e797:/# touch usr/src/app/index.js
+]0;root@e9306ae2e797: /root@e9306ae2e797:/# [Kexit
+exit
+[1m[7m%[27m[1m[0m                                                                                                                                    [0m[27m[24m[Jnightsnail@Eemelis-MBP script-answers % [K[?2004h
