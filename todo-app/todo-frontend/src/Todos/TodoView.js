@@ -18,7 +18,7 @@ const TodoView = () => {
 
   const createTodo = async (todo) => {
     const { data } = await axios.post('/todos', todo)
-    setTodos([...todos, data])
+    setTodos([...todos, data.todo])
   }
 
   const deleteTodo = async (todo) => {
