@@ -1,0 +1,342 @@
+
+<----- Command Line Actions: ----->
+
+cd = change directory
+ls = show files in the directory
+ls -a = show all hidden files too
+ls -l = show the details of the files 
+mkdir = create a directory
+rmdir X = delete a directory
+rm -r X = remove directory X
+nano X = edit file X 
+cat X = print file X
+tail/head -n Y X = print from top/bottom Y lines of file X
+grep "Y" X = print "Y" from file X
+tail -n Y X | grep Z = take Y lines of content from the bottom of file X and search it in file Z
+rm X - remove file X
+ls > X = show files in the working directory and put it in file X
+ls >> X = show files in working directory and add to file X
+watch = repeat a command in certain intervals
+X && Y = chain Y command after X command
+echo "X" = terminal log "X"
+alias = define alias to a command (short version of a long command "shortcut")
+&: ending a command with this will make sure the command line will not be locked as the process will be moved to the background
+history = review command history
+ssh user@server.address = login as user to sever in the server.address
+wget site.address = download site from site.address
+chmod   r = read permission
+	w = write permission
+	x = execute permission
+	u = owner of the file
+	g = users belonging to the group of the file
+	o = all other users
+
+	- removes a permission
+	+ adds a permission
+
+chmod u+x X = gives the owner of X file an execute permission.
+ 
+#!/bin/bash = script special line called shebang
+script.sh = script file with terminal commands(permission needed)
+
+<----- Docker ----->
+
+<- BASIC COMMANDS ->
+
+pwd = current working directory
+docker images = see the images installed
+docker run X = (pull+start) run the X image and create a container from it 
+docker pull X = pull the X image from docker hub
+docker run -d X = run the X image and create a detached container with the id as an output 
+docker run -d -pX:Y --name N Z = run image Z's container in detached mode with host's port X and container's port Y and gives it the name N
+docker ps = see the running containers
+docker ps -a = see all the containers
+docker start ID = starts the container with the corresponding ID
+docker stop ID = stop the container with the corresponding ID
+docker logs ID/name = shows the container's (ID/name) logs
+docker logs ID | tail = log the last command
+docker logs ID -f = listen to logs and print them
+docker network ls = show what networks docker have
+docker network create X = create a network with the X name
+docker exec -it ID/name X/Y = run integrated terminal and get to file Y in directory X inside container (ID/name)  !! SEE SECTION <--MANIPULATE CONTAINERS--> !!
+-e X -e Y = environment variable X and environment variable Y
+--net X  = connect network by name X
+docker rm X = remove container X
+docker rmi X = remove image X
+
+<--- Dockerfile --->
+
+Dockerfile is a blueprint for images, it is based on existing images like node/apache (FROM node)
+
+FROM X:Y = install existing X image from DockerHub with version Y
+WORKDIR /X = defines X as the image's working directory - makes all the actions to this file (like root dir)
+ENV X = sets environmental variables X && Y
+    Y
+RUN X -p /Y/Z = executes any Linux command. run command X (for example mkdir) creates folder Z nested in folder Y !! IT IS CREATED INSIDE THE CONTAINER AND NOT ON THE LOCAL HOST !!
+ENTRYPOINT ["X.Y"] = defines the entry point file X of type Y (for example ["script.sh"]) 
+COPY . /X/Y = copy current folder files to folder Y inside folder X !! IT IS EXECUTED AND CREATED IN THE LOCAL HOST !!
+CMD ["X", "Y"] = executes entry point command (only one) X on file Y (for example ["node", "server.js"]) !! INSIDE THE CONTAINER !!
+
+CLI command:
+docker-build -t X:Y Z = build an image names X version Y from Dockerfile stored in directory Z   
+
+<-- BUILD AN IMAGE WITH DOCKERFILE -->
+<-Example->
+
+	File								Comments
+
+FROM node:13-alpine			#pulls and runs (install node in the container) node image from DockerHub with version 13-alpine
+
+WORKDIR /home/app 				# defines /home/app as the working directory
+
+COPY package.json .			#copies the app's package.json file to the image with all the app's dependencies to the image working directory (/home/app)		
+
+ENV MONGO_DB_USERNAME=admin		#assigns environmental variables to the image
+    MONGO_DB_PWD=passwoed
+
+RUN mkdir -p /home/app			#creates a folder /home/app !! CREATED INSIDE THE CONTAINER AND NOT THE LOCAL FOLDER !!
+
+RUN nom install				#run Linux command in the CLI "nom install" installed all the dependencies packages from npm to the container
+
+COPY . .					#copies current directory (SOURCE) to /home/app (TARGET) !! EXECUTED AND CREATED FROM LOCAL FOLDER TO CONTAINER FOLDER & INCLUDES THE NEW DEPENDENCIES!!
+
+CMD ["node", "/home/app/server.js"]	#initial entry point, a Linux command that starts the app container !! THERE'S ONLY ONE ENTRYPOINT COMMAND !! 
+
+ 
+!   			 CLI COMMAND TO INITIALIZE AN IMAGE FROM THE DOCKERFILE ( docker build -t my-app:1.0 . ===SYNTAX===> COMMAND TAG NAME:VERSION SOURCE-LOCATION )    			!
+!!                     			   SEARCH FOR THE LAST LOG ("Successfully build ID") the ID indicates the name of the new image 		 	  	       		       !!
+!!!   			 THE DIFFERENCE BETWEEN RUN & COPY IS THAT RUN LET'S YOU EXECUTE COMMANDS INSIDE THE CONTAINER ONLY AND COPY HAVE ACCESS TO YOUR LOCAL FILES 			      !!! 
+!!!!  				  THE DIFFERENCE BETWEEN RUN & CMD IS THAT YOU CAN RUN MULTIPLE LINUX COMMANDS THROUGH RUN BUT ONLY ONE ENTRYPOINT COMMAND THROUGH CMD        	             !!!!
+!!!!! 	WHEN YOU ADJUST THE DOCKER FILE YOU MUST REBUILD THE IMAGE 1.remove container (docker rm containerId) 2.remove image (docker rmi imageId) 3.build the adjusted image (docker build)   !!!!!
+!!!!!!				ALTHOUGH THERE'S .gitIgnore FILE IN THE LOCAL SOURCE DIRECTORY, DOCKER WILL COPY THEM, THERFORE YOU NEED TO CREATE A .dockerignore FILE 		   !!!!!!
+
+.dockerignore =>
+
+node_modules
+Dockerfile
+.git
+.gitIgnore
+.dockerignore
+.env
+
+
+<-- VOLUMES -->
+
+Docker volumes are used for data persistence 
+When adjusting the image we need to rebuild it, and the data in the container is lost
+
+3 Types of Volumes:
+
+1.Host Volume: define the connection between the host & container. Option to decide where on the host system the reference is made. 	=> CLI: docker run -v hostDirectoryPath:containerDirectoryPath
+
+2.Anonymous Volume: referencing a folder in the container only. for each container a folder is auto generated 		     	=> CLI: docker run -v containerDirectoryPath
+  where the data of the container is mounted. referenced by path. 
+															    
+3.Named Volume: 	same as anonymous volume, only that the reference is by name that you initially define. 			     	=> CLI: docker run -v name:containerDirectoryPath
+
+!  		 	  containerDirectoryPath is the path INSIDE of the container. Data platforms such as mongoDB have a default directory where they store the data 	               !
+					(mongo: /data/db || mysql: var/lib/mysql || postgres: var/lib/postgresql/data)
+
+!!   	 Docker Volume Locations - each OS has its own location to store local volumes' data (Windows: C:ProgramData\docker\volumes || Linux && Mac: /var/lib/docker/volumes )      	     !!
+				
+
+!!!		  			  Inside the volumes directory all the volumes will be stored in a list and each volume receives a hash key. 		  		             !!!
+ 
+!!!! Docker on Mac creates a Linux VM and stores all the Docker data there to access it on Mac => CLI: screen pathToLocalPhisicalStorage => IT: ls /var/lib/docker/volumes/volumeName/_data  !!!!
+								(To end the screen session: ctrl+a+k => y => enter)
+
+<-Using Volumes in docker-compose->
+Named Volume: Define the volume in the docker compose file
+
+<-Template->
+
+				    version: '3'
+				    services:
+				      serviceName:
+				        image: imageName
+				        port: 
+					- HOSTPORT:CONTAINERPORT
+					volumes: 				###container Level - mounts the volume to the container, path needed
+					- volumeName: containerDirectoryPath	### the data from volumeName will be stored in containerDirectoryPath
+				    volumes:					### Image Level - defines the volumes used, reference only
+					volumeName:				### name of the volume
+					  driver: driverLocation			### Specify to docker where to store the data - local means to save it locally
+
+<-Example->
+
+				    version: '3'
+				    services:
+				      mongodb:
+				        image: mongo
+				        port: 
+					- 27017:27017
+					volumes: 				
+					- mongo-data: /data/db	
+				    volumes:					
+					mongo-data:				
+					  driver: local					
+ 
+<-- YAML -->
+
+data serialisation language (like JSON / XML) || valid JSON is also valid YAML || file extension : .yml / .yaml
+YAML Syntax Indentation Validator - onlineyamltools.com/edit-yaml || YAML extension for VSCode
+Values - string, number, bool, yes/no, on/off
+
+Syntax - 
+KEY: VALUE
+# comment
+Object: 
+  KEY: VALUE
+  KEY: VALUE
+List:
+  - Object: 
+  KEY: VALUE
+  KEY: VALUE
+  List: [VALUE, VALUE, VALUE]
+  - Object: 
+  KEY: VALUE
+  List:
+    - KEY:VALUE
+    - KEY:VALUE
+  KEY: VALUE
+
+multilinestring: |
+ This is
+ A multiline 
+ String
+
+onelinestring: > 
+ This is 
+ A one line
+ string
+
+$ENVIROMENTAL_VALUE
+
+KEY: {{ .placehoder }}
+
+Seperate components --- 
+
+Common use:
+Key-value pairs = KEY: VALUE
+metadata = object
+labels = object
+spec = object
+containers = list of objects
+port = list
+volumeMounts = list of objects
+args = native list = [VALUE, VALUE, VALUE]
+
+<-- BUILD A CONTAINER -->
+
+docker-compose -f X up -d / down = run/shut docker compose file X (yaml) to compose commands and initiate/shut multiple containers and their network connections
+!!!!! WITHOUT VOLUMES WHEN YOU RESTART A CONTAINER THE CONFIGURATION(DATA) IS LOST !!!!!!
+
+<- Example ->
+
+CLI commands to initiate 2 containers and a network:
+1. docker network create mongo-network
+2. docker run -p 27017:27017 -d -e MONGO_USERNAME=admin --name mongodb --net mongo-network mongo
+3. docker run -p 8080:8080 -d -e ME_CONFIG_MONGODB_SERVER=mongoserver --name mongo-express --net mongo-network mongo-express
+
+File name that replaces the commands  : mongo-docker-compose.yml
+
+	File						Comments					CLI
+
+version: '3'					#version of the docker-compose		( docker run -d )
+services:					#services used (images)			
+  mongodb:					#container no.1 name			( --name mongodb ) 
+    image: mongo					#image no.1 name				( mongo )
+    ports:					#ports					( -p )
+      -27017:27017				#port numbers (HOST:CONTAINER)		( 27017:27017 )	
+    environments:				#environment variables			( -e )
+      -MONGO_USERNAME=admin			#variable				( MONGO_USERNAME=admin ) 
+  mongo-express:					#container no.2 name			( --name mongo-express ) 
+    image: mongo-express				#image no.2 name				( mongo-express )
+    ports:					#ports					( -p )
+      -8080:8080					#port numbers (HOST:CONTAINER)		( 8080:8080 )	
+    environments:				#environment variables			( -e )
+      -ME_CONFIG_MONGODB_SERVER=mongoserver	#variable				( ME_CONFIG_MONGODB_SERVER=mongoserver ) 
+
+
+! 				CLI COMMAND TO INITIATE THE CONTAINERS ( docker-compose -f mongo-docker-compose.yml up -d  )					 	   !
+
+!! DOCKER-COMPOSE WILL ADD PREFIX AND SUFIX TO THE CONTAINERS NAMES: search for the new names in the logs ("creating myapp_mongodb_1" && "creating myapp_mongo-express_1") !!
+
+!!! 		DOCKER-COMPOSE TAKES CARE OF CREATING A NETWORK AND ASSIGNING IT TO THE CONTAINERS: search for ("Creating network "myapp_default"") in the logs		!!!
+ 					( replacing CLI : 1.docker network create mongo-network 2. --net mongo-network ) 
+
+
+<--- MANIPULATE CONTAINERS --->
+
+docker exec -it ID/name X/Y = run integrated terminal and get to file Y in directory X inside container (ID/name)
+docker exec is used to manipulate inside the container environment
+
+Inside the root of the container:
+
+env = print the environmental variables
+exit = exit the root terminal
+
+Instalations:
+apt-get update = update the current container environment
+apt-get -y install X = install and approve X library
+
+Install node:
+install curl = apt-get -y install curl
+Installing the NodeSource Node.js = curl -sL https://deb.nodesource.com/setup_16.x | bash
+Set-Up node JS = apt install -y nodejs
+
+
+<-Example->
+
+docker exec -it containerId /folderX ===> will open an integrated terminal inside folderX of containerId ===> indication: CLI starts with /# instead of [~]$  
+
+<---PUSHING && PULLING AN IMAGE TO PRIVATE REPOSITORY ONLINE-->
+
+Image naming syntax in Docker registries 
+registryDomain/imageName:tag 
+
+Example to pull from DockerHub:
+Full Syntax = docker pull docker.io/library/mongo:4.2
+Short Syntax = docker pull mongo:4.2
+
+Examples to tag & push/pull from AWS ECR:
+
+In order to pull an image from a private docker repo you need to login
+docker login 
+
+docker tag imageName:version registryDomain/imageName:version = tags my image with the full name that includes the registry domain for the image repo
+docker push fullRegisterDomain/imageName:tag = only full syntax 
+docker pull fullRegisterDomain/imageName:tag = only full syntax 
+
+<---CI: Continues Integration---> 
+
+<--Jenkins-->
+
+after committing the project from dev Jenkins builds the JS app and creates a new image and stores it in a docker repo
+Jenkins: After you commit a dev repo with the docker file, Jenkins then builds an image from the Dockerfile specifications and pushes it to a docker repo where other developers can pull it and use it for testing / production
+
+<---Deployment--->
+0.create app image, push it to private docker repo, 
+1.login to your private docker repo and pull your image
+2.pull other dependent images from DockerHub
+4.make sure that the db API urls are not on local host anymore and adjust them to the db platform you use
+*if there were any changes in your images rebuild them before deployment
+3.create a .yml file with composing instructions for all the images (specify them under services and remember to use full image name that includes the registry domain & tag for the private image)
+  *the docker-compose file (.yml) is used by the deployment server to pull all the applications/services (images) and deploy them
+4.make the docker-compose file available for the deployment server (should be copied and stored in its environment)
+5.docker-compose -f fileName.yml up => compose all images into one container under deployment server 
+
+
+<---Containers Orchestration--->
+
+<--Kubernetes-->
+
+
+
+
+
+
+
+
+
+

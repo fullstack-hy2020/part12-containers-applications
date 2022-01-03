@@ -1,0 +1,46 @@
+Script started on Sun Jan  2 14:52:14 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+bash-3.2$ socker image ls
+bash: socker: command not found
+bash-3.2$ f[Kdocker image ls
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+ubuntu        latest    ba6acccedd29   2 months ago   72.8MB
+hello-world   latest    feb5d9fea6a5   3 months ago   13.3kB
+bash-3.2$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                        PORTS     NAMES
+0bfbb5cb5407   ubuntu        "bash"     14 minutes ago   Exited (0) 2 minutes ago                crazy_jepsen
+e11929c3a21b   hello-world   "/hello"   15 minutes ago   Exited (0) 15 minutes ago               nifty_montalcini
+892fc9f523be   ubuntu        "bash"     15 minutes ago   Exited (0) 15 minutes ago               eloquent_jones
+07f84673a9fd   ubuntu        "bash"     35 minutes ago   Exited (130) 32 minutes ago             ecstatic_gagarin
+c1b2f070a04f   hello-world   "/hello"   39 minutes ago   Exited (0) 39 minutes ago               sleepy_sanderson
+5e8342a74ed5   hello-world   "/hello"   48 minutes ago   Exited (0) 48 minutes ago               gallant_easley
+bash-3.2$ docker r[Kcontainer run[K[K[K[K[K[K[K[K[K[K[K[K[Krun -i crazy_jespen 
+Unable to find image 'crazy_jespen:latest' locally
+docker: Error response from daemon: pull access denied for crazy_jespen, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+bash-3.2$ docker run -i crazy_jespen [K[K[K[K[Kpsen 
+Unable to find image 'crazy_jepsen:latest' locally
+docker: Error response from daemon: pull access denied for crazy_jepsen, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+bash-3.2$ docker container run -i crazy_p[Kjepsen
+Unable to find image 'crazy_jepsen:latest' locally
+docker: Error response from daemon: pull access denied for crazy_jepsen, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+bash-3.2$ docker container run -i crazy_jepsen[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9Prun -i crazy_jepsen sp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[Kimage ls[C[C[C[C[C[C[C[C[C[Cs[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pdocker ps[5Pexitdocker start -i crazy_jepsen[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pcontainer ls -astart -i crazy_jepsen
+]0;root@0bfbb5cb5407: /root@0bfbb5cb5407:/# nano /user/   r/src/app/index.js
+[?2004h[?1049h[22;0;0t[1;36r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[34;88H(B[0;7m[ Reading... ](B[m[34;87H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                                        /usr/src/app/index.js                                                                                  [1;188H(B[m[35d(B[0;7m^G(B[m Get Help[18G(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is[52G(B[0;7m^K(B[m Cut Text[69G(B[0;7m^J(B[m Justify[86G(B[0;7m^C(B[m Cur Pos[103G(B[0;7mM-U(B[m Undo[35;120H(B[0;7mM-A(B[m Mark Text    (B[0;7mM-](B[m To Bracket   (B[0;7mM-Q(B[m Previous     (B[0;7m^B(B[m Back[36d(B[0;7m^X(B[m Exit[36;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Paste Text    (B[0;7m^T(B[m To Spell[86G(B[0;7m^_(B[m Go To Line    (B[0;7mM-E(B[m Redo[36;120H(B[0;7mM-6(B[m Copy Text    (B[0;7m^Q(B[m Where Was     (B[0;7mM-W(B[m Next[36;171H(B[0;7m^F(B[m Forward[34d[2d[39;49m(B[m[?12l[?25h[?25l[1;180H(B[0;7mModified(B[m[2dc[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25ls[?12l[?25h[?25lo[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l.[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25li[?12l[?25h[?25lg[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lg[?12l[?25h[?25l([?12l[?25h[?25l'[?12l[?25h[?25lH[?12l[?25h[?25le[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25lw[?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l w[34d[K[2;21H[?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l W[?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25ll[?12l[?25h[?25ls[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25l"[?12l[?25h[?25l [?12l[?25h[?25l[2;13H(B[0;1m[35m'Hello World'[39m(B[m[?12l[?25h[?25l)[?12l[?25h[?25l[3d[?12l[?25h[?25l[35;18H[30X[35;48H(B[0;7mM-D(B[m DOS Format [69G          [86G         (B[0;7mM-A(B[m Append      [35;120H[22X[35;142H(B[0;7mM-B(B[m Backup File[K[36;2H(B[0;7mC(B[m Cancel[36;18H[30X[36;48H(B[0;7mM-M(B[m Mac Format[18X[36;86H         (B[0;7mM-P(B[m Prepend     [36;120H[22X[36;142H(B[0;7m^T(B[m To Files[K[34d(B[0;7mFile Name to Write: /usr/src/app/index.js                                                                                                                                                    [34;1H(B[m[34;42H[?12l[?25h[?25l[34;87H[1K (B[0;7m[ Writing... ](B[m[K[1;180H(B[0;7m        (B[m[34;87H(B[0;7m[ Wrote 2 lines ](B[m[35;18H(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is      (B[0;7m^K(B[m Cut Text[69G(B[0;7m^J(B[m Justify[86G(B[0;7m^C(B[m Cur Pos       (B[0;7mM-U(B[m Undo[35;120H(B[0;7mM-A(B[m Mark Text    (B[0;7mM-](B[m To Bracket   (B[0;7mM-Q(B[m Previous     (B[0;7m^B(B[m Back[36;2H(B[0;7mX(B[m Exit  [36;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace       (B[0;7m^U(B[m Paste Text    (B[0;7m^T(B[m To Spell[86G(B[0;7m^_(B[m Go To Line    (B[0;7mM-E(B[m Redo[36;120H(B[0;7mM-6(B[m Copy Text    (B[0;7m^Q(B[m Where Was     (B[0;7mM-W(B[m Next[36;171H(B[0;7m^F(B[m Forward[34d[3d[?12l[?25h[?25l[34d[J[36d[?12l[?25h[36;1H[?1049l[23;0;0t[?1l>[?2004l]0;root@0bfbb5cb5407: /root@0bfbb5cb5407:/# [Kls\ 
+[0m[01;36mbin[0m  [01;34mboot[0m  [01;34mdev[0m  [01;34metc[0m  [01;34mhome[0m  [01;36mlib[0m  [01;36mlib32[0m  [01;36mlib64[0m  [01;36mlibx32[0m  [01;34mmedia[0m  [01;34mmnt[0m  [01;34mopt[0m  [01;34mproc[0m  [01;34mroot[0m  [01;34mrun[0m  [01;36msbin[0m  [01;34msrv[0m  [01;34msys[0m  [30;42mtmp[0m  [01;34musr[0m  [01;34mvar[0m
+]0;root@0bfbb5cb5407: /root@0bfbb5cb5407:/# cat [2Pls[24@nano /usr/src/app/index.js[1P[1P[1P[1P[1@c[1@a[1@t
+console.log('Hello World')
+
+]0;root@0bfbb5cb5407: /root@0bfbb5cb5407:/# exit
+exit
+bash-3.2$ exit
+exit
+
+Script done on Sun Jan  2 14:56:28 2022

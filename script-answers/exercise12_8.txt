@@ -1,0 +1,76 @@
+Script started on Mon Jan  3 17:38:51 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ docker exec -it [K[K[K[K[K[K[K[K[Kps
+CONTAINER ID   IMAGE     COMMAND                  CREATED             STATUS             PORTS                     NAMES
+82d64fd732fc   nginx     "/docker-entrypoint.…"   7 minutes ago       Up 7 minutes       0.0.0.0:8080->80/tcp      strange_hypatia
+d61afc0f892d   mongo     "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+bash-3.2$ di[Kocker exec -it todo-backend_mongo_1 bash
+]0;root@d61afc0f892d: /root@d61afc0f892d:/# mongo -u root -p example
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("af2940df-d697-439b-bd18-081ba998e566") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+The server generated these startup warnings when booting: 
+        2022-01-03T14:32:57.965+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collecions[3G[Jshow collecions[18G
+uncaught exception: Error: don't know how to show [collecions] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> [3G[Jshow collecions[18G[3G[Jshow collecions[17G[3G[Jshow collecions[16G[3G[Jshow collecions[15G[3G[Jshow collecions[14G[3G[Jshow collections[15G[3G[Jshow collections[19G
+todos
+> db.fin[3G[Jdb.fi[8G[3G[Jdb.f[7G[3G[Jdb.[6Gtodos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("61d309186178535f470ae539"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("61d309186178535f470ae53a"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("61d30b9433a1b0fb07679f8c"), "text" : "Updated text", "done" : false, "__v" : 0 }
+> db.todos.insert({ texet[3G[Jdb.todos.insert({ texe[25G[3G[Jdb.todos.insert({ tex[24Gt: ""[3G[Jdb.todos.insert({ text: "[28G[3G[Jdb.todos.insert({ text: [27G"Increase the number of tools in my toolbelt", done: false })[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: false })[88G
+WriteResult({ "nInserted" : 1 })
+> [3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: false })[88G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: false })[88G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("61d309186178535f470ae539"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("61d309186178535f470ae53a"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("61d30b9433a1b0fb07679f8c"), "text" : "Updated text", "done" : false, "__v" : 0 }
+{ "_id" : ObjectId("61d31ae45d51f642eaf53ee8"), "text" : "Increase the number of tools in my toolbelt", "done" : false }
+> exit[3G[Jexit[7G
+bye
+]0;root@d61afc0f892d: /root@d61afc0f892d:/# exit
+exit
+bash-3.2$ exit
+exit
+
+Script done on Mon Jan  3 19:33:02 2022
