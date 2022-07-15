@@ -1,5 +1,6 @@
 import './App.css';
 import TodoView from './Todos/TodoView'
+require('dotenv').config()
 
 function App() {
   return (

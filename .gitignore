@@ -1,3 +1,6 @@
 express-server
 todo-app/todo-backend/mongo_data
 todo-app/todo-backend/redis_data
+todo-app/todo-frontend/.env
+hello-front/.gitignore
+hello-front
