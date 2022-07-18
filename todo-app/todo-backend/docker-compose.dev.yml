@@ -1,10 +1,19 @@
 version: '3.8'
-
 services:
+  app:
+    image: todo-back-dev
+    volumes:
+      - ./:/usr/src/app 
+    environment:
+      MONGO_URL: mongodb://the_username:the_password@mongodb:27017/the_database
+      REDIS_URL: redis://redis:6379
+    ports:
+      - 3001:3001 #machine/container
+    container_name: todo-backend-dev
   mongo:
     image: mongo
     ports:
-      - 3456:27017
+      - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
