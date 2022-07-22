@@ -1,0 +1,25 @@
+services:
+  app-front:
+    image: front-prod
+    build:
+      context: .
+      dockerfile: ./todo-frontend/Dockerfile_prod
+    volumes:
+      - ./todo-frontend/:/usr/src/app/
+    ports:
+      - 3000:80
+    container_name: todo-front-prod
+  
+  app-back:
+    image: back-prod
+    build:
+      context: .
+      dockerfile: ./todo-backend/prod.Dockerfile
+    volumes:
+      - ./todo-backend:/usr/src/app/
+    environment:
+      MONGO_URL: mongodb://the_username:the_password@mongo:27017/the_database
+      REDIS_URL: redis://redis:6379
+    ports:
+      - 3001:3001
+    container_name: todo-back-prod
