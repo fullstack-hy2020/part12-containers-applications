@@ -2,6 +2,9 @@ version: '3.8'
 services:
   app:
     image: todo-back-dev
+    build:
+      context: .
+      dockerfile: ./dev.Dockerfile
     volumes:
       - ./:/usr/src/app 
     environment:

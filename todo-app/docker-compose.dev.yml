@@ -5,18 +5,59 @@ services:
       context: .
       dockerfile: ./todo-frontend/Dockerfile_dev
     volumes:
-      - ./:/usr/src/todo-app/
+      - ./todo-frontend/:/usr/src/todo-app/
     ports:
       - 3000:3000
     container_name: todo-front-dev
+    depends_on:
+      - app-back
+
+  app-back:
+    image: todo-back-dev
+    build:
+      context: .
+      dockerfile: ./todo-backend/dev.Dockerfile
+    volumes:
+      - ./todo-backend:/usr/src/todo-app/
+    environment:
+      MONGO_URL: mongodb://the_username:the_password@mongo:27017/the_database
+      REDIS_URL: redis://redis:6379
+    expose:
+      - 3001 
+    container_name: todo-back-dev
+
+  mongo:
+    image: mongo
+    expose:
+      - 27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./todo-backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./todo-backend/mongo_data:/data/db
+
+  redis:
+    image: redis
+    expose:
+      - 6379
+    command: ['redis-server', '--appendonly', 'yes']
+    volumes:
+      - ./todo-backend/redis_data:/data
+
   debug-helper:
     image: busybox
+
   nginx:
     image: nginx:1.20.1
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - 8080:80
+      - 8000:80
     container_name: reverse-proxy
     depends_on:
-      - app-front # wait for the frontend container to be started
+      - app-front 
+      - app-back
+      - mongo
+      - redis
