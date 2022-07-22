@@ -1,0 +1,11 @@
+services:
+  app:
+    image: todo-front-dev
+    build:
+      context: . # directory as build context"
+      dockerfile: Dockerfile_dev # dockerfile to read
+    volumes:
+      - ./:/usr/src/app # volume link"
+    ports:
+      - 3000:3000
+    container_name: todo-front-dev # This will name the container hello-front-dev
