@@ -4,7 +4,7 @@ services:
     image: back-prod
     build:
       context: .
-      dockerfile: ./prod.Dockerfile
+      dockerfile: ./Dockerfile_prod
     volumes:
       - ./:/usr/src/app
     environment:

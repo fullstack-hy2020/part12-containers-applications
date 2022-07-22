@@ -16,7 +16,7 @@ services:
     image: todo-back-dev
     build:
       context: .
-      dockerfile: ./todo-backend/dev.Dockerfile
+      dockerfile: ./todo-backend/Dockerfile_dev
     volumes:
       - ./todo-backend:/usr/src/todo-app/
     environment:

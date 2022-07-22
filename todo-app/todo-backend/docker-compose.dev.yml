@@ -4,7 +4,7 @@ services:
     image: todo-back-dev
     build:
       context: .
-      dockerfile: ./dev.Dockerfile
+      dockerfile: ./Dockerfile_dev
     volumes:
       - ./:/usr/src/app 
     environment:
