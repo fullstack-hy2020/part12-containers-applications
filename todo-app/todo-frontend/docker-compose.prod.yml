@@ -1,0 +1,11 @@
+services:
+  app-front:
+    image: front-prod
+    build:
+      context: . # directory as build context"
+      dockerfile: Dockerfile_prod 
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:80
+    container_name: todo-front-prod
