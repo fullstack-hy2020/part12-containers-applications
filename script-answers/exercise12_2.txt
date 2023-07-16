@@ -1,0 +1,42 @@
+Script started on 2023-07-13 20:28:27-07:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="92" LINES="48"]
+[?2004h]0;hyohyo814@DESKTOP-URBV7TN: ~/hyohyocontainers/part12-containers-applications[01;32mhyohyo814@DESKTOP-URBV7TN[00m:[01;34m~/hyohyocontainers/part12-containers-applications[00m$ ubuntu [K[K[K[K[K[K[Kdocker h[Kcontaine r[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdocker run -it  ubuntu bash
+[?2004l[?2004h]0;root@afc85a7167e2: /root@afc85a7167e2:/# ls -l
+[?2004ltotal 48
+lrwxrwxrwx   1 root root    7 Jun 24 02:02 [0m[01;36mbin[0m -> [01;34musr/bin[0m
+drwxr-xr-x   2 root root 4096 Apr 18  2022 [01;34mboot[0m
+drwxr-xr-x   5 root root  360 Jul 14 03:28 [01;34mdev[0m
+drwxr-xr-x   1 root root 4096 Jul 14 03:28 [01;34metc[0m
+drwxr-xr-x   2 root root 4096 Apr 18  2022 [01;34mhome[0m
+lrwxrwxrwx   1 root root    7 Jun 24 02:02 [01;36mlib[0m -> [01;34musr/lib[0m
+lrwxrwxrwx   1 root root    9 Jun 24 02:02 [01;36mlib32[0m -> [01;34musr/lib32[0m
+lrwxrwxrwx   1 root root    9 Jun 24 02:02 [01;36mlib64[0m -> [01;34musr/lib64[0m
+lrwxrwxrwx   1 root root   10 Jun 24 02:02 [01;36mlibx32[0m -> [01;34musr/libx32[0m
+drwxr-xr-x   2 root root 4096 Jun 24 02:02 [01;34mmedia[0m
+drwxr-xr-x   2 root root 4096 Jun 24 02:02 [01;34mmnt[0m
+drwxr-xr-x   2 root root 4096 Jun 24 02:02 [01;34mopt[0m
+dr-xr-xr-x 369 root root    0 Jul 14 03:28 [01;34mproc[0m
+drwx------   2 root root 4096 Jun 24 02:06 [01;34mroot[0m
+drwxr-xr-x   5 root root 4096 Jun 24 02:06 [01;34mrun[0m
+lrwxrwxrwx   1 root root    8 Jun 24 02:02 [01;36msbin[0m -> [01;34musr/sbin[0m
+drwxr-xr-x   2 root root 4096 Jun 24 02:02 [01;34msrv[0m
+dr-xr-xr-x  11 root root    0 Jul 14 03:28 [01;34msys[0m
+drwxrwxrwt   2 root root 4096 Jun 24 02:06 [30;42mtmp[0m
+drwxr-xr-x  14 root root 4096 Jun 24 02:02 [01;34musr[0m
+drwxr-xr-x  11 root root 4096 Jun 24 02:06 [01;34mvar[0m
+[?2004h]0;root@afc85a7167e2: /root@afc85a7167e2:/# cd usr/src
+[?2004l[?2004h]0;root@afc85a7167e2: /usr/srcroot@afc85a7167e2:/usr/src# c ls
+[?2004l[?2004h]0;root@afc85a7167e2: /usr/srcroot@afc85a7167e2:/usr/src# md app
+[?2004lbash: md: command not found
+[?2004h]0;root@afc85a7167e2: /usr/srcroot@afc85a7167e2:/usr/src# mkdir app
+[?2004l[?2004h]0;root@afc85a7167e2: /usr/srcroot@afc85a7167e2:/usr/src# cd app
+[?2004l[?2004h]0;root@afc85a7167e2: /usr/src/approot@afc85a7167e2:/usr/src/app# touch index.kjs   js
+[?2004l[?2004h]0;root@afc85a7167e2: /usr/src/approot@afc85a7167e2:/usr/src/app# ls -l
+[?2004ltotal 0
+-rw-r--r-- 1 root root 0 Jul 14 03:29 index.js
+[?2004h]0;root@afc85a7167e2: /usr/src/approot@afc85a7167e2:/usr/src/app# exit
+[?2004lexit
+[?2004h]0;hyohyo814@DESKTOP-URBV7TN: ~/hyohyocontainers/part12-containers-applications[01;32mhyohyo814@DESKTOP-URBV7TN[00m:[01;34m~/hyohyocontainers/part12-containers-applications[00m$ exit
+[?2004lexit
+
+Script done on 2023-07-13 20:29:47-07:00 [COMMAND_EXIT_CODE="0"]
