@@ -1,6 +1,5 @@
 const express = require('express');
 const { Todo } = require('../mongo');
-const { findOneAndUpdate } = require('../mongo/models/Todo');
 const router = express.Router();
 
 /* GET todos listing. */
