@@ -1,0 +1,11 @@
+Script started on 2023-08-09 11:28:24+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="150" LINES="45"]
+[?2004h]0;thomas@aurelius: ~/part12-containers-applications/script-answers[01;32mthomas@aurelius[00m:[01;34m~/part12-containers-applications/script-answers[00m$ sudo docker run -it ubuntu bash
+[?2004l[sudo] password for thomas: 
+[?2004h]0;root@d90ee002ffde: /root@d90ee002ffde:/# mkdir /usr/src/app
+[?2004l[?2004h]0;root@d90ee002ffde: /root@d90ee002ffde:/# touch /usr/src/app/index.js
+[?2004l[?2004h]0;root@d90ee002ffde: /root@d90ee002ffde:/# [Kexit
+[?2004lexit
+[?2004h]0;thomas@aurelius: ~/part12-containers-applications/script-answers[01;32mthomas@aurelius[00m:[01;34m~/part12-containers-applications/script-answers[00m$ exit
+[?2004lexit
+
+Script done on 2023-08-09 11:29:20+01:00 [COMMAND_EXIT_CODE="0"]
