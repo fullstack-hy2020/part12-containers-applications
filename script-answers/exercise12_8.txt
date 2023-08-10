@@ -1,0 +1,96 @@
+Script started on 2023-08-10 16:19:22+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="150" LINES="45"]
+[?2004h]0;thomas@aurelius: ~/part12-containers-applications[01;32mthomas@aurelius[00m:[01;34m~/part12-containers-applications[00m$ sudo docker compose -f todo-app/todo-backend/docker-compose.dev.yml up -d
+[?2004l[sudo] password for thomas: 
+[33mWARN[0m[0000] Found orphan containers ([todo-backend-server-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
+[1A[1B[0G[?25l[+] Running 0/0
+ ⠿ Container todo-backend-mongo-1  Starting                                                                                                      [34m0.1s [0m
+[?25h[1A[1A[0G[?25l[+] Running 0/1
+ ⠿ Container todo-backend-mongo-1  Starting                                                                                                      [34m0.2s [0m
+[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+ [32m✔[0m Container todo-backend-mongo-1  [32mStarted[0m                                                                                                       [34m0.3s [0m
+[?25h[?2004h]0;thomas@aurelius: ~/part12-containers-applications[01;32mthomas@aurelius[00m:[01;34m~/part12-containers-applications[00m$ sudo docker ps
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+fb028d809865   mongo     "docker-entrypoint.s…"   6 seconds ago   Up 5 seconds   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+[?2004h]0;thomas@aurelius: ~/part12-containers-applications[01;32mthomas@aurelius[00m:[01;34m~/part12-containers-applications[00m$ sudo docker exec -it [7mfb028d809865[27mfb028d809865 bash
+[?2004l[?2004hroot@fb028d809865:/# mongosh -u root p 0 -p example
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	64d5005834964f4f3c290cc7
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1[0m
+Using MongoDB:		6.0.8
+[1m[33mUsing Mongosh[0m:		1.10.1
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the [1mdisableTelemetry()[0m command.
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-08-10T15:19:38.895+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-08-10T15:19:39.317+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m        108.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.fid[1G[0Jthe_database> db.todos.fi[26Gnd({}}[1G[0Jthe_database> db.todos.find({}[31G)
+[
+  {
+    _id: ObjectId("64d4c9091b95f8e6625fed57"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("64d4c9091b95f8e6625fed58"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("64d4e5c137d9c562e0292bdc"),
+    text: [32m'learn Posgres'[39m,
+    done: [33mtrue[39m,
+    __v: [33m0[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.insertOne({ text[33mtext[39m: Increase the number o[36mof[39m tools i[36min[39m my toolbelt, [1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my toolbelt,[86G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my toolbelt[85G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my toolbel[84G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my toolbe[83G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my toolb[82G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my tool[81G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my too[80G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my to[79G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my t[78G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my [77G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m my[76G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m m[75G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m [74G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [36min[39m[73G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools i[72G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools [71G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tools[70G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m tool[69G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m too[68G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m to[67G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m t[66G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m [65G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [36mof[39m[64G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number o[63G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number [62G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the number[61G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the numbe[60G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the numb[59G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the num[58G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the nu[57G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the n[56G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the [55G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase the[54G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase th[53G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase t[52G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase [51G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increase[50G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increas[49G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Increa[48G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Incre[47G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Incr[46G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: Inc[45G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: In[44G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: I[43G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: [42G[32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone: fals[33mfalse[39m })
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("64d500e634964f4f3c290cc8")
+}
+[1G[0Jthe_database> [15Gdb.todoes[1G[0Jthe_database> db.todoe[23Gs[1G[0Jthe_database> db.todoe[23G[1G[0Jthe_database> db.todo[22Gs.find9[1G[0Jthe_database> db.todos.find[28G({})
+[
+  {
+    _id: ObjectId("64d4c9091b95f8e6625fed57"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("64d4c9091b95f8e6625fed58"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("64d4e5c137d9c562e0292bdc"),
+    text: [32m'learn Posgres'[39m,
+    done: [33mtrue[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("64d500e634964f4f3c290cc8"),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004hroot@fb028d809865:/# exit
+[?2004lexit
+[?2004h]0;thomas@aurelius: ~/part12-containers-applications[01;32mthomas@aurelius[00m:[01;34m~/part12-containers-applications[00m$ exit
+[?2004lexit
+
+Script done on 2023-08-10 16:24:27+01:00 [COMMAND_EXIT_CODE="0"]
