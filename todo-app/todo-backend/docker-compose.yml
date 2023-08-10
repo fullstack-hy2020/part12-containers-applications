@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  server:
+    image: todo-app
+    build: .
+    ports:
+      - 3000:3001
