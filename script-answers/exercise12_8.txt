@@ -1,0 +1,89 @@
+Script started on 2024-01-07 01:40:33+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="120" LINES="60"]
+]0;helmer@fuxipadV2:~/homework/part12-containers-applications/script-answers[?2004hhelmer:script-answers>exec [K[K[K[K[Kdocke4r5 [K[K[K[Kr exe c[K[Kc -it todo-backend-mongo-1 bash
+[?2004l[?2004hroot@ed4a5ce72146:/# mongosh -ur  root -p example
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	6599e50bea772d79e424ddeb
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1[0m
+Using MongoDB:		7.0.4
+[1m[33mUsing Mongosh[0m:		2.1.1
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2024-01-05T00:17:59.788+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2024-01-05T00:18:00.082+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2024-01-05T00:18:00.082+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         60.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gdb.[1G[0Jthe_database> db[17G[1G[0Jthe_database> d[16G[1G[0Jthe_database> [15Gdb.todos[1G[0Jthe_database> db.todo[22G[1G[0Jthe_database> db.tod[21G[1G[0Jthe_database> db.to[20G[1G[0Jthe_database> db.t[19G[1G[0Jthe_database> db.[18G[1G[0Jthe_database> db[17G[1G[0Jthe_database> d[16G[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.e[1G[0Jthe_database> db.todos.[24Gdelete[1G[0Jthe_database> db.todos.delet[29G[1G[0Jthe_database> db.todos.dele[28G[1G[0Jthe_database> db.todos.del[27G[1G[0Jthe_database> db.todos.de[26G[1G[0Jthe_database> db.todos.d[25G[1G[0Jthe_database> db.todos.[24Gfind({})
+[
+  {
+    _id: ObjectId([32m'6596aa4c76e7d9bccd7db1a6'[39m),
+    text: [32m'YAP'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6596aa4c76e7d9bccd7db1a7'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6598a2c3afd0c847d6d603c0'[39m),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15G_[1G[0Jthe_database> [15Gdb.ti[1G[0Jthe_database> db.t[19Godos.[1G[0Jthe_database> db.todos[23G.finsByif[1G[0Jthe_database> db.todos.finsByi[31G[1G[0Jthe_database> db.todos.finsBy[30G[1G[0Jthe_database> db.todos.finsB[29G[1G[0Jthe_database> db.todos.fins[28G[1G[0Jthe_database> db.todos.fin[27G[1G[0Jthe_database> db.todos.fi[26G[1G[0Jthe_database> db.todos.f[25G[1G[0Jthe_database> db.todos.[24G[1G[0Jthe_database> db.todos[23G[1G[0Jthe_database> db.todo[22G[1G[0Jthe_database> db.tod[21G[1G[0Jthe_database> db.to[20G[1G[0Jthe_database> db.t[19G[1G[0Jthe_database> db.[18G[1G[0Jthe_database> db[17G[1G[0Jthe_database> d[16G[1G[0Jthe_database> [15G
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId([32m'6596aa4c76e7d9bccd7db1a6'[39m),
+    text: [32m'YAP'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6596aa4c76e7d9bccd7db1a7'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gde[1G[0Jthe_database> d[16Gb.todos.insertOne({test[1G[0Jthe_database> db.todos.insertOne({tes[38G[1G[0Jthe_database> db.todos.insertOne({te[37Gxt[33mtext[39m:[32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone: fals[33mfalse[39m})
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'6599e750ea772d79e424ddec'[39m)
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[100G[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId([32m'6596aa4c76e7d9bccd7db1a6'[39m),
+    text: [32m'YAP'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6596aa4c76e7d9bccd7db1a7'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6599e750ea772d79e424ddec'[39m),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004hroot@ed4a5ce72146:/# exit
+[?2004lexit
+]0;helmer@fuxipadV2:~/homework/part12-containers-applications/script-answers[?2004hhelmer:script-answers>exit
+[?2004lexit
+
+Script done on 2024-01-07 01:50:48+02:00 [COMMAND_EXIT_CODE="0"]
