@@ -14,11 +14,25 @@ services:
       - mongo_data:/data/db
   redis:
     image: redis
-    ports: 
+    ports:
       - 6378:6379
     command: ['redis-server', '--appendonly', 'yes']
     volumes:
       - ./redis_data:/data
+
+  db:
+    image: todo-back-dev
+    volumes: 
+      - .:/usr/src/app/
+    ports:
+      - 3001:3001
+    environment:
+      PORT: 3001
+      REDIS_URL: redis://redis:6379
+      MONGO_URL: mongodb://the_username:the_password@mongo:27017/the_database
+    depends_on:
+      - mongo
+      - redis
 
 
 volumes:
