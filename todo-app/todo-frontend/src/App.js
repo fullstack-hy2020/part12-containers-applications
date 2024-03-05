@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import TodoView from './Todos/TodoView'
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <TodoView />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

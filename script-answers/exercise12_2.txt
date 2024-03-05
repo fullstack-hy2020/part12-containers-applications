@@ -1,0 +1,33 @@
+Script started on 2023-12-30 17:37:04+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="60"]
+]0;helmer@fuxipadV2:~/homework/part12-containers-applications/script-answers[?2004hhelmer:script-answers>[7mdocker run -it ubuntu bash[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker run -it ubuntu bash
+[A
+[?2004lUnable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+
+[1A[2Ka48641193673: Pulling fs layer [1B[1A[2Ka48641193673: Downloading [>                                                  ]  310.6kB/29.55MB[1B[1A[2Ka48641193673: Downloading [==>                                                ]  1.244MB/29.55MB[1B[1A[2Ka48641193673: Downloading [====>                                              ]  2.784MB/29.55MB[1B[1A[2Ka48641193673: Downloading [========>                                          ]   4.95MB/29.55MB[1B[1A[2Ka48641193673: Downloading [==========>                                        ]  6.183MB/29.55MB[1B[1A[2Ka48641193673: Downloading [============>                                      ]  7.428MB/29.55MB[1B[1A[2Ka48641193673: Downloading [===============>                                   ]   8.96MB/29.55MB[1B[1A[2Ka48641193673: Downloading [=================>                                 ]   10.2MB/29.55MB[1B[1A[2Ka48641193673: Downloading [===================>                               ]  11.45MB/29.55MB[1B[1A[2Ka48641193673: Downloading [=====================>                             ]  12.68MB/29.55MB[1B[1A[2Ka48641193673: Downloading [=======================>                           ]  13.92MB/29.55MB[1B[1A[2Ka48641193673: Downloading [==========================>                        ]  15.78MB/29.55MB[1B[1A[2Ka48641193673: Downloading [==============================>                    ]  17.95MB/29.55MB[1B[1A[2Ka48641193673: Downloading [=================================>                 ]  19.81MB/29.55MB[1B[1A[2Ka48641193673: Downloading [===================================>               ]  21.04MB/29.55MB[1B[1A[2Ka48641193673: Downloading [=====================================>             ]  22.29MB/29.55MB[1B[1A[2Ka48641193673: Downloading [=======================================>           ]  23.53MB/29.55MB[1B[1A[2Ka48641193673: Downloading [=========================================>         ]  24.77MB/29.55MB[1B[1A[2Ka48641193673: Downloading [============================================>      ]  26.02MB/29.55MB[1B[1A[2Ka48641193673: Downloading [==============================================>    ]  27.26MB/29.55MB[1B[1A[2Ka48641193673: Downloading [================================================>  ]   28.5MB/29.55MB[1B[1A[2Ka48641193673: Verifying Checksum [1B[1A[2Ka48641193673: Download complete [1B[1A[2Ka48641193673: Extracting [>                                                  ]  327.7kB/29.55MB[1B[1A[2Ka48641193673: Extracting [=======>                                           ]  4.588MB/29.55MB[1B[1A[2Ka48641193673: Extracting [=============>                                     ]  8.192MB/29.55MB[1B[1A[2Ka48641193673: Extracting [=====================>                             ]  12.78MB/29.55MB[1B[1A[2Ka48641193673: Extracting [=============================>                     ]  17.69MB/29.55MB[1B[1A[2Ka48641193673: Extracting [======================================>            ]  22.61MB/29.55MB[1B[1A[2Ka48641193673: Extracting [===========================================>       ]  25.56MB/29.55MB[1B[1A[2Ka48641193673: Extracting [================================================>  ]  28.84MB/29.55MB[1B[1A[2Ka48641193673: Extracting [==================================================>]  29.55MB/29.55MB[1B[1A[2Ka48641193673: Pull complete [1BDigest: sha256:6042500cf4b44023ea1894effe7890666b0c5c7871ed83a97c36c76ae560bb9b
+Status: Downloaded newer image for ubuntu:latest
+[?2004h]0;root@516ebf467a32: /root@516ebf467a32:/# mkdir /usr/s
+sbin/  share/ src/   
+]0;root@516ebf467a32: /root@516ebf467a32:/# mkdir /usr/src/app
+[?2004l[?2004h]0;root@516ebf467a32: /root@516ebf467a32:/# touch usr/src/app/indec x.js                      h 
+.dockerenv  dev/        lib/        libx32/     opt/        run/        sys/        var/        
+bin/        etc/        lib32/      media/      proc/       sbin/       tmp/        
+boot/       home/       lib64/      mnt/        root/       srv/        usr/        
+]0;root@516ebf467a32: /root@516ebf467a32:/# touch /usr/
+bin/     games/   include/ lib/     lib32/   lib64/   libexec/ libx32/  local/   sbin/    share/   src/     
+]0;root@516ebf467a32: /root@516ebf467a32:/# touch /usr/
+bin/     games/   include/ lib/     lib32/   lib64/   libexec/ libx32/  local/   sbin/    share/   src/     
+]0;root@516ebf467a32: /root@516ebf467a32:/# touch /usr/
+bin/     games/   include/ lib/     lib32/   lib64/   libexec/ libx32/  local/   sbin/    share/   src/     
+]0;root@516ebf467a32: /root@516ebf467a32:/# touch /usr/     ua sr/
+bin/     games/   include/ lib/     lib32/   lib64/   libexec/ libx32/  local/   sbin/    share/   src/     
+]0;root@516ebf467a32: /root@516ebf467a32:/# touch usr/    /usr/ap  s
+sbin/  share/ src/   
+]0;root@516ebf467a32: /root@516ebf467a32:/# touch /usr/src/app/index.js
+[?2004l[?2004h]0;root@516ebf467a32: /root@516ebf467a32:/# [Kexit
+[?2004lexit
+]0;helmer@fuxipadV2:~/homework/part12-containers-applications/script-answers[?2004hhelmer:script-answers>ext[Kit
+[?2004lexit
+
+Script done on 2023-12-30 17:39:19+02:00 [COMMAND_EXIT_CODE="0"]
