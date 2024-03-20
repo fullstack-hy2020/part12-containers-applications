@@ -1,0 +1,84 @@
+Script started on Fri Mar  8 13:41:38 2024
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004hexitdocker exec -it todo-backend-mongo-1 bash[K[?2004l
+[?2004hroot@fe4f3b2f8f60:/# exitmongosh -u root -p 'example' mongodb://127.0.00.1/
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	65eb078b139de2d62cb63a4c
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.5[0m
+Using MongoDB:		7.0.6
+[1m[33mUsing Mongosh[0m:		2.1.5
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2024-03-08T12:37:39.040+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2024-03-08T12:37:39.040+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7G[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65e9d43d1ef979bfe949b591'[39m)})[6G[1A[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65e9d43d1ef979bfe949b591'[39m)})[6G[1A[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65eb035a2c29a97e5a2a4fa8'[39m)})[6G[1A[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> show collections[23G[1G[0Jtest> use the_database[23G[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> show collections[23G[1G[0Jtest> use the_database[23G[1G[0Jtest> show collections[23G[1G[0Jtest> use the_database[23G[1G[0Jtest> show dbs[15G
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         72.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7G[1G[0Jtest> show dbs[15G[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65e9d43d1ef979bfe949b591'[39m)})[6G[1A[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65eb035a2c29a97e5a2a4fa8'[39m)})[6G[1A[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> show collections[23G
+
+[1G[0Jtest> [7G[1G[0Jtest> show collections[23G[1G[0Jtest> show dbs[15G[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65e9d43d1ef979bfe949b591'[39m)})[6G[1A[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65eb035a2c29a97e5a2a4fa8'[39m)})[6G[1A[1G[0Jtest> db.todos.find()[22G[1G[0Jtest> show collections[23G[1G[0Jtest> use the_database[23G
+switched to db the_database
+[1G[0Jthe_database> [15G[1G[0Jthe_database> use the_database[31G[1G[0Jthe_database> show collections[31G[1G[0Jthe_database> show dbs[23G[1G[0Jthe_database> show collections[31G
+[1mtodos[0m
+[1G[0Jthe_database> [15G[1G[0Jthe_database> show collections[31G[1G[0Jthe_database> use the_database[31G[1G[0Jthe_database> show collections[31G[1G[0Jthe_database> show dbs[23G[1G[0Jthe_database> db.todos.find()[30G
+[
+  {
+    _id: ObjectId([32m'65e99f7b23a30ec009a15a8b'[39m),
+    text: [32m'Actualizar texto del todo'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'65e99f7b23a30ec009a15a8c'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.find()[30G[1G[0Jthe_database> show collections[31G[1G[0Jthe_database> use the_database[31G[1G[0Jthe_database> show collections[31G[1G[0Jthe_database> show dbs[23G[1G[0Jthe_database> db.todos.find()[30G[1G[0Jthe_database> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65e9d43d1ef979bfe949b591'[39m)})[14G[1A[1G[0Jthe_database> db.todos.find()[30G[1G[0Jthe_database> db.todos.deleteOne({[32m"_id"[39m: ObjectId([32m'65eb035a2c29a97e5a2a4fa8'[39m)})[14G[1A[1G[0Jthe_database> db.todos.find()[30G[1G[0Jthe_database> show collections[31G[1G[0Jthe_database> use the_database[31G[1G[0Jthe_database> db.todos.find()[30G[1G[0Jthe_database> show collections[31G[1G[0Jthe_database> use the_database[31G[1G[0Jthe_database> show dbs[23G[1G[0Jthe_database> db.todos.find()[30G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[34G[1A[1G[0Jthe_database> db.todos.find()[30G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[34G
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'65eb07b7139de2d62cb63a4d'[39m)
+}
+[1G[0Jthe_database> [15Gdb.todos.find()
+[
+  {
+    _id: ObjectId([32m'65e99f7b23a30ec009a15a8b'[39m),
+    text: [32m'Actualizar texto del todo'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'65e99f7b23a30ec009a15a8c'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'65eb07b7139de2d62cb63a4d'[39m),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004hroot@fe4f3b2f8f60:/# mongosh -u root -p 'example' mongodb://127.0.00.1/[A@fe4f3b2f8f60:/# [K
+[K[Aroot@fe4f3b2f8f60:/# exit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004hdocker exec -it todo-backend-mongo-1 bash[K[A[25Cexit[K[1B[K[A[55Cdocker exec -it todo-backend-mongo-1 bash[K[A[25Cscript ../../script-answers/exercise12_8.txt[A[22Cexit[K[1B[K[A[55Cscript ../../script-answers/exercise12_8.txt[K[A[22Cdocker exec -it todo-backend-mongo-1 bash[K[A[25Cscript ../../script-answers/exercise12_8.txt[A[22Cexit[K[1B[K[A[55Cdocker exec -it todo-backend-mongo-1 bash[K[A[25CMONGO_URL=mongodb://the_username:the_p[2Csword@localhost:3456/the_database npm run dev[K[?2004l
+
+> todo-express-backend@0.0.0 dev /Users/javiersaldano/Documents/ProyectosCodigo/part12-containers-applications/todo-app/todo-backend
+> nodemon ./bin/www
+
+[33m[nodemon] 2.0.12[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[0mGET / [36m304 [0m1.499 ms - -[0m
+Hello in get todos
+[0mGET /todos [32m200 [0m19.989 ms - 264[0m
+^C
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004heexit[?2004l
+
+Script done on Fri Mar  8 13:43:48 2024

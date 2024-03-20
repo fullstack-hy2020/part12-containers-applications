@@ -1,0 +1,11 @@
+Script started on Thu Feb 22 12:46:29 2024
+[1m[7m%[27m[1m[0m                                                                                                                                                           [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier part12-containers-applications % [K[?2004h[7mdocker container run -it ubuntu bash[27m[36D[27md[27mo[27mc[27mk[27me[27mr[27m [27mc[27mo[27mn[27mt[27ma[27mi[27mn[27me[27mr[27m [27mr[27mu[27mn[27m [27m-[27mi[27mt[27m [27mu[27mb[27mu[27mn[27mt[27mu[27m [27mb[27ma[27ms[27mh[?2004l
+[?2004h]0;root@f83c35c65592: /root@f83c35c65592:/# [7mmkdir -p /usr/src/app[27m
+[Aroot@f83c35c65592:/# mkdir -p /usr/src/app
+[A
+[?2004l[?2004h]0;root@f83c35c65592: /root@f83c35c65592:/# [K[7mtouch /usr/src/app/index.js[27mtouch /usr/src/app/index.js
+[?2004l[?2004h]0;root@f83c35c65592: /root@f83c35c65592:/# [Kexit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                                                                                           [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier part12-containers-applications % [K[?2004heexit[?2004l
+
+Script done on Thu Feb 22 12:47:47 2024

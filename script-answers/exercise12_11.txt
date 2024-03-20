@@ -1,0 +1,56 @@
+Script started on Sat Mar  9 21:21:47 2024
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004hdocker exec -it redis redis-cli[K[?2004l
+127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+(empty array)
+127.0.0.1:6379> [0K127.0.0.1:6379> s[17C[0K127.0.0.1:6379> se[18C[0K127.0.0.1:6379> set[19C[0K127.0.0.1:6379> set [0;90;49mkey value [NX|XX] [GET] [EX seconds|PX millise[0m[20C[0K127.0.0.1:6379> set c[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milli[0m[21C[0K127.0.0.1:6379> set cp[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mill[0m[22C[0K127.0.0.1:6379> set cpu[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mil[0m[23C[0K127.0.0.1:6379> set cpun[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mi[0m[24C[0K127.0.0.1:6379> set cpunt[0;90;49m key value [NX|XX] [GET] [EX seconds|PX m[0m[25C[0K127.0.0.1:6379> set cpun[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mi[0m[24C[0K127.0.0.1:6379> set cpu[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mil[0m[23C[0K127.0.0.1:6379> set cp[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mill[0m[22C[0K127.0.0.1:6379> set c[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milli[0m[21C[0K127.0.0.1:6379> set cp[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mill[0m[22C[0K127.0.0.1:6379> set c[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milli[0m[21C[0K127.0.0.1:6379> set co[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mill[0m[22C[0K127.0.0.1:6379> set cou[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mil[0m[23C[0K127.0.0.1:6379> set coun[0;90;49m key value [NX|XX] [GET] [EX seconds|PX mi[0m[24C[0K127.0.0.1:6379> set count[0;90;49m key value [NX|XX] [GET] [EX seconds|PX m[0m[25C[0K127.0.0.1:6379> set count [0;90;49mvalue [NX|XX] [GET] [EX seconds|PX milli[0m[26C[0K127.0.0.1:6379> set count 9[0;90;49m value [NX|XX] [GET] [EX seconds|PX mil[0m[27C[0K127.0.0.1:6379> set count 90[0;90;49m value [NX|XX] [GET] [EX seconds|PX mi[0m[28C[0K127.0.0.1:6379> set count 900[0;90;49m value [NX|XX] [GET] [EX seconds|PX m[0m[29C[0K127.0.0.1:6379> set count 9001[0;90;49m value [NX|XX] [GET] [EX seconds|PX [0m[30C[0K127.0.0.1:6379> set count 9001[30C
+OK
+127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+1) "count"
+127.0.0.1:6379> [0K127.0.0.1:6379> g[17C[0K127.0.0.1:6379> ge[18C[0K127.0.0.1:6379> get[19C[0K127.0.0.1:6379> get [0;90;49mkey[0m[20C[0K127.0.0.1:6379> get c[0;90;49m key[0m[21C[0K127.0.0.1:6379> get co[0;90;49m key[0m[22C[0K127.0.0.1:6379> get cou[0;90;49m key[0m[23C[0K127.0.0.1:6379> get coun[0;90;49m key[0m[24C[0K127.0.0.1:6379> get count[0;90;49m key[0m[25C[0K127.0.0.1:6379> get count [0;90;49m[0m[26C[0K127.0.0.1:6379> get count[0;90;49m key[0m[25C[0K127.0.0.1:6379> get count[25C
+"9001"
+127.0.0.1:6379> [0K127.0.0.1:6379> e[17C[0K127.0.0.1:6379> ex[18C[0K127.0.0.1:6379> exi[19C[0K127.0.0.1:6379> exit[20C[0K127.0.0.1:6379> exit [21C[0K127.0.0.1:6379> exit [21C
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004heexe  docker exec -it redis redis-cli[K[A[35CREDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[K[?2004l
+
+> todo-express-backend@0.0.0 dev /Users/javiersaldano/Documents/ProyectosCodigo/part12-containers-applications/todo-app/todo-backend
+> nodemon ./bin/www
+
+[33m[nodemon] 2.0.12[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[0mGET /todos/statistics [36m304 [0m3.899 ms - -[0m
+[0mGET /todos/statistics [36m304 [0m1.683 ms - -[0m
+[0mGET /todos/statistics [36m304 [0m1.265 ms - -[0m
+[0mPOST /todos [32m200 [0m22.789 ms - 85[0m
+[0mGET /todos/statistics [32m200 [0m1.855 ms - 22[0m
+[0mGET /todos/statistics [36m304 [0m1.285 ms - -[0m
+^C
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004hREDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[K[A[A[14Cdocker exec -it redis redis-cli[K[1B[K[A[16C[?2004l[1B127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+1) "count"
+127.0.0.1:6379> [0K127.0.0.1:6379> F[17C[0K127.0.0.1:6379> FL[18C[0K127.0.0.1:6379> FLU[19C[0K127.0.0.1:6379> FLUS[20C[0K127.0.0.1:6379> FLUSH[21C[0K127.0.0.1:6379> FLUSHA[22C[0K127.0.0.1:6379> FLUSHAL[23C[0K127.0.0.1:6379> FLUSHALL[24C[0K127.0.0.1:6379> FLUSHALL[24C
+OK
+127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+(empty array)
+127.0.0.1:6379> [0K127.0.0.1:6379> e[17C[0K127.0.0.1:6379> ex[18C[0K127.0.0.1:6379> exi[19C[0K127.0.0.1:6379> exit[20C[0K127.0.0.1:6379> exit[20C
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004hdocker exec -it redis redis-cli[K[A[35CREDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[K[?2004l
+
+> todo-express-backend@0.0.0 dev /Users/javiersaldano/Documents/ProyectosCodigo/part12-containers-applications/todo-app/todo-backend
+> nodemon ./bin/www
+
+[33m[nodemon] 2.0.12[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[0mPOST /todos [32m200 [0m17.900 ms - 97[0m
+[0mGET /todos/statistics [32m200 [0m2.421 ms - 19[0m
+^C
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004hREDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[K[A[A[14Cdocker exec -it redis redis-cli[K[1B[K[A[16C[?2004l[1B127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+1) "count"
+127.0.0.1:6379> [0K127.0.0.1:6379> g[17C[0K127.0.0.1:6379> ge[18C[0K127.0.0.1:6379> get[19C[0K127.0.0.1:6379> get [0;90;49mkey[0m[20C[0K127.0.0.1:6379> get k[0;90;49m key[0m[21C[0K127.0.0.1:6379> get ke[0;90;49m key[0m[22C[0K127.0.0.1:6379> get key[0;90;49m key[0m[23C[0K127.0.0.1:6379> get keys[0;90;49m key[0m[24C[0K127.0.0.1:6379> get key[0;90;49m key[0m[23C[0K127.0.0.1:6379> get ke[0;90;49m key[0m[22C[0K127.0.0.1:6379> get k[0;90;49m key[0m[21C[0K127.0.0.1:6379> get [0;90;49mkey[0m[20C[0K127.0.0.1:6379> get c[0;90;49m key[0m[21C[0K127.0.0.1:6379> get co[0;90;49m key[0m[22C[0K127.0.0.1:6379> get cou[0;90;49m key[0m[23C[0K127.0.0.1:6379> get coun[0;90;49m key[0m[24C[0K127.0.0.1:6379> get count[0;90;49m key[0m[25C[0K127.0.0.1:6379> get count[25C
+"1"
+127.0.0.1:6379> [0K127.0.0.1:6379> e[17C[0K127.0.0.1:6379> ex[18C[0K127.0.0.1:6379> exi[19C[0K127.0.0.1:6379> exit[20C[0K127.0.0.1:6379> exit [21C[0K127.0.0.1:6379> exit[20C[0K127.0.0.1:6379> exit[20C
+[1m[7m%[27m[1m[0m                                                                  [0m[27m[24m[Jjaviersaldano@MacBook-Pro-de-Javier todo-backend % [K[?2004heexit[?2004l
+
+Script done on Sat Mar  9 21:26:52 2024

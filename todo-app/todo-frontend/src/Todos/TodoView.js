@@ -6,20 +6,43 @@ import Form from './Form'
 
 const TodoView = () => {
   const [todos, setTodos] = useState([])
+  
 
-  const refreshTodos = async () => {
+  /*const refreshTodos = async () => {
     const { data } = await axios.get('/todos')
     setTodos(data)
-  }
+  }*/
+
+  const refreshTodos = async () => {
+    try {
+      const response = await axios.get('/todos');
+      if (response && response.data) {
+        setTodos(response.data);
+      }
+    } catch (error) {
+      console.error('Error refreshing todos:', error);
+    }
+  };
 
   useEffect(() => {
     refreshTodos()
   }, [])
 
-  const createTodo = async (todo) => {
+  /*const createTodo = async (todo) => {
     const { data } = await axios.post('/todos', todo)
     setTodos([...todos, data])
-  }
+  }*/
+
+  const createTodo = async (todo) => {
+    try {
+      const response = await axios.post('/todos', todo);
+      if (response && response.data) {
+        setTodos([...todos, response.data]);
+      }
+    } catch (error) {
+      console.error('Error creating todo:', error);
+    }
+  };
 
   const deleteTodo = async (todo) => {
     await axios.delete(`/todos/${todo._id}`)
