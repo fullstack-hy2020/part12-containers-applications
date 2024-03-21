@@ -59,6 +59,5 @@ services:
     container_name: reverse-proxy
     depends_on:
       - app
-      - server
 volumes:
   mongo_data:
