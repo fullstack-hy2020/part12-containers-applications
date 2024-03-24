@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    image: frontend-phonebook-dev
+    build:
+      context: ./frontend # The context will pick this directory as the "build context"
+      dockerfile: ./dev.Dockerfile # This will simply tell which dockerfile to read
+    volumes:
+      - ./frontend:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
+    environment:
+        - REACT_APP_URL_BACKEND=http://localhost:8080/api/
+        - PORT=3000
+        - WDS_SOCKET_PORT=0
+    depends_on:
+      - server
+  server:
+    image: backend-phonebook-dev
+    build:
+      context: ./backend
+      dockerfile: ./dev.Dockerfile
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGODB_URI=mongodb+srv://javierjxs20:0vbDs8HsNcgaR1ym@cluster0.azeylml.mongodb.net/phonebook-app?retryWrites=true&w=majority
+      - PORT=3001
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app
+
+volumes:
+  mongo_data:
